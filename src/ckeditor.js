@@ -31,6 +31,21 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 
 //add plugins
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import FontFamily from '@ckeditor/ckeditor5-font/src/fontfamily';
+import FontSize from '@ckeditor/ckeditor5-font/src/fontsize';
+import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
+import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolor';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import SpecialCharactersEssentials from '@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials';
+import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -58,7 +73,22 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	Alignment
+	Alignment,
+	Code,
+	Strikethrough,
+	Subscript,
+	Superscript,
+	Underline,
+	FontFamily,
+	FontSize,
+	FontColor,
+	FontBackgroundColor,
+	Highlight,
+	HorizontalLine,
+	RemoveFormat,
+	SpecialCharacters, 
+	SpecialCharactersEssentials,
+	TodoList
 ];
 
 // Editor configuration.
@@ -67,23 +97,15 @@ ClassicEditor.defaultConfig = {
 		items: [
 			'heading',
 			'|',
-			'bold',
-			'italic',
-			'link',
-			'bulletedList',
-			'numberedList',
+			'bold', 'italic', 'underline', 'strikethrough', 'subscript', 'superscript', 'code', 'removeFormat',
 			'|',
-			'alignment',
-			'indent',
-			'outdent',
+			'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight',
 			'|',
-			'imageUpload',
-			'blockQuote',
-			'insertTable',
-			'mediaEmbed',
-			'undo',
-			'redo'
-		]
+			'bulletedList', 'numberedList', 'todoList', 'alignment', 'indent', 'outdent',
+			'|',
+			'horizontalLine', 'blockQuote', 'specialCharacters', 'link', 'insertTable', 'undo', 'redo'
+		],
+		shouldNotGroupWhenFull: true
 	},
 	image: {
 		toolbar: [
@@ -101,5 +123,5 @@ ClassicEditor.defaultConfig = {
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'pt-br'
 };
