@@ -91,8 +91,49 @@ ClassicEditor.builtinPlugins = [
 	TodoList
 ];
 
+var cores =  {
+	// quantidade de colunas mostradas no grid de cor
+	columns: 9,
+
+	// quantidade de cores a serem mostradas 
+	// 9 * 13 = 117
+	documentColors: 117, 
+
+	// definição de paleta de cores
+	colors: [
+	  {color: 'hsl(0, 0%, 0%)'}, {color: 'hsl(0, 0%, 12.5%)'},{color: 'hsl(0, 0%, 25%)'},{color: 'hsl(0, 0%, 37.5%)'},{color: 'hsl(0, 0%, 50%)'},
+	  {color: 'hsl(0, 0%, 62.5%)'},{color: 'hsl(0, 0%, 75%)'},{color: 'hsl(0, 0%, 87.5%)'},{color: 'hsl(0, 0%, 100%)'},
+	  {color: 'hsl(0, 100%, 10%)'},{color: 'hsl(0, 100%, 20%)'},{color: 'hsl(0, 100%, 30%)'},{color: 'hsl(0, 100%, 40%)'},{color: 'hsl(0, 100%, 50%)'},
+	  {color: 'hsl(0, 100%, 60%)'},{color: 'hsl(0, 100%, 70%)'},{color: 'hsl(0, 100%, 80%)'},{color: 'hsl(0, 100%, 90%)'},
+	  {color: 'hsl(30, 100%, 10%)'},{color: 'hsl(30, 100%, 20%)'},{color: 'hsl(30, 100%, 30%)'},{color: 'hsl(30, 100%, 40%)'},{color: 'hsl(30, 100%, 50%)'},
+	  {color: 'hsl(30, 100%, 60%)'},{color: 'hsl(30, 100%, 70%)'},{color: 'hsl(30, 100%, 80%)'},{color: 'hsl(30, 100%, 90%)'},
+	  {color: 'hsl(60, 100%, 10%)'},{color: 'hsl(60, 100%, 20%)'},{color: 'hsl(60, 100%, 30%)'},{color: 'hsl(60, 100%, 40%)'},{color: 'hsl(60, 100%, 50%)'},
+	  {color: 'hsl(60, 100%, 60%)'},{color: 'hsl(60, 100%, 70%)'},{color: 'hsl(60, 100%, 80%)'},{color: 'hsl(60, 100%, 90%)'},
+	  {color: 'hsl(90, 100%, 10%)'},{color: 'hsl(90, 100%, 20%)'},{color: 'hsl(90, 100%, 30%)'},{color: 'hsl(90, 100%, 40%)'},{color: 'hsl(90, 100%, 50%)'},
+	  {color: 'hsl(90, 100%, 60%)'},{color: 'hsl(90, 100%, 70%)'},{color: 'hsl(90, 100%, 80%)'},{color: 'hsl(90, 100%, 90%)'},
+	  {color: 'hsl(120, 100%, 10%)'},{color: 'hsl(120, 100%, 20%)'},{color: 'hsl(120, 100%, 30%)'},{color: 'hsl(120, 100%, 40%)'},{color: 'hsl(120, 100%, 50%)'},
+	  {color: 'hsl(120, 100%, 60%)'},{color: 'hsl(120, 100%, 70%)'},{color: 'hsl(120, 100%, 80%)'},{color: 'hsl(120, 100%, 90%)'},
+	  {color: 'hsl(150, 100%, 10%)'},{color: 'hsl(150, 100%, 20%)'},{color: 'hsl(150, 100%, 30%)'},{color: 'hsl(150, 100%, 40%)'},{color: 'hsl(150, 100%, 50%)'},
+	  {color: 'hsl(150, 100%, 60%)'},{color: 'hsl(150, 100%, 70%)'},{color: 'hsl(150, 100%, 80%)'},{color: 'hsl(150, 100%, 90%)'},
+	  {color: 'hsl(180, 100%, 10%)'},{color: 'hsl(180, 100%, 20%)'},{color: 'hsl(180, 100%, 30%)'},{color: 'hsl(180, 100%, 40%)'},{color: 'hsl(180, 100%, 50%)'},
+	  {color: 'hsl(180, 100%, 60%)'},{color: 'hsl(180, 100%, 70%)'},{color: 'hsl(180, 100%, 80%)'},{color: 'hsl(180, 100%, 90%)'},
+	  {color: 'hsl(210, 100%, 10%)'},{color: 'hsl(210, 100%, 20%)'},{color: 'hsl(210, 100%, 30%)'},{color: 'hsl(210, 100%, 40%)'},{color: 'hsl(210, 100%, 50%)'},
+	  {color: 'hsl(210, 100%, 60%)'},{color: 'hsl(210, 100%, 70%)'},{color: 'hsl(210, 100%, 80%)'},{color: 'hsl(210, 100%, 90%)'},
+	  {color: 'hsl(240, 100%, 10%)'},{color: 'hsl(240, 100%, 20%)'},{color: 'hsl(240, 100%, 30%)'},{color: 'hsl(240, 100%, 40%)'},{color: 'hsl(240, 100%, 50%)'},
+	  {color: 'hsl(240, 100%, 60%)'},{color: 'hsl(240, 100%, 70%)'},{color: 'hsl(240, 100%, 80%)'},{color: 'hsl(240, 100%, 90%)'},
+	  {color: 'hsl(270, 100%, 10%)'},{color: 'hsl(270, 100%, 20%)'},{color: 'hsl(270, 100%, 30%)'},{color: 'hsl(270, 100%, 40%)'},{color: 'hsl(270, 100%, 50%)'},
+	  {color: 'hsl(270, 100%, 60%)'},{color: 'hsl(270, 100%, 70%)'},{color: 'hsl(270, 100%, 80%)'},{color: 'hsl(270, 100%, 90%)'},
+	  {color: 'hsl(300, 100%, 10%)'},{color: 'hsl(300, 100%, 20%)'},{color: 'hsl(300, 100%, 30%)'},{color: 'hsl(300, 100%, 40%)'},{color: 'hsl(300, 100%, 50%)'},
+	  {color: 'hsl(300, 100%, 60%)'},{color: 'hsl(300, 100%, 70%)'},{color: 'hsl(300, 100%, 80%)'},{color: 'hsl(300, 100%, 90%)'},
+	  {color: 'hsl(330, 100%, 10%)'},{color: 'hsl(330, 100%, 20%)'},{color: 'hsl(330, 100%, 30%)'},{color: 'hsl(330, 100%, 40%)'},{color: 'hsl(330, 100%, 50%)'},
+	  {color: 'hsl(330, 100%, 60%)'},{color: 'hsl(330, 100%, 70%)'},{color: 'hsl(330, 100%, 80%)'},{color: 'hsl(330, 100%, 90%)'}
+	]
+};
+
 // Editor configuration.
 ClassicEditor.defaultConfig = {
+	fontColor: cores,
+	fontBackgroundColor: cores,
 	toolbar: {
 		items: [
 			'heading',
