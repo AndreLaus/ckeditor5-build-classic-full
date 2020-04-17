@@ -52,7 +52,7 @@ import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
 //custom plugins
 //import S3Upload from 'ckeditor5-sss-upload/src/s3upload';
 
-import './style.css';
+import './ckeditor-custom-style.css';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
