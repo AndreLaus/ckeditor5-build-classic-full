@@ -47,6 +47,12 @@ import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
 import SpecialCharactersEssentials from '@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials';
 import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
+//import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+
+//custom plugins
+//import S3Upload from 'ckeditor5-sss-upload/src/s3upload';
+
+import './style.css';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -90,8 +96,11 @@ ClassicEditor.builtinPlugins = [
 	RemoveFormat,
 	SpecialCharacters, 
 	SpecialCharactersEssentials,
-	TodoList
+	TodoList	
+	//S3Upload
 ];
+
+//console.log('finder', CKFinder);
 
 var cores =  {
 	// quantidade de colunas mostradas no grid de cor
@@ -146,7 +155,7 @@ ClassicEditor.defaultConfig = {
 			'|',
 			'bulletedList', 'numberedList', 'todoList', 'alignment', 'indent', 'outdent',
 			'|',
-			'horizontalLine', 'blockQuote', 'specialCharacters', 'link', 'imageUpload', 'insertTable', 'undo', 'redo'
+			'horizontalLine', 'blockQuote', 'specialCharacters', 'link', /*'ckfinder', 'imageUpload',*/ 'insertTable', 'undo', 'redo'
 		],
 		shouldNotGroupWhenFull: true
 	},
@@ -173,6 +182,12 @@ ClassicEditor.defaultConfig = {
 			'mergeTableCells'
 		]
 	},
+/* 	s3Upload: {
+		policyUrl: "",
+		mapUrl: ({ location, bucket, key }) => {
+		  return location;
+		}
+	  }, */
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'pt-br'
 };
