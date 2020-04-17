@@ -170,6 +170,10 @@
     border-color: hsl(0, 0%, 75%);
 }
 
+.ck-editor__editable {
+    width: 98.6%;
+}
+
 /* ckeditor5-table/theme/table.css */
 .ck-content .table table th {
     font-weight: bold;
